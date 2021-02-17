@@ -1,4 +1,5 @@
 STATUS = ["Dm brelee2222 to invite me onto your server", "https://discord.gg/QzU45Tuvyz", "made by brelee2222", "go to brelee2222's server for bot updates"]
+
 lettersa = ('a', 'A', '4', '@') 
 lettersb = ('b', 'B', '3', '8')
 lettersc = ('c', 'C', '(', '¢')

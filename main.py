@@ -74,6 +74,7 @@ class MyClient(discord.Client):
         if message.content == 'servers':
           for guild in client.guilds:
             await message.author.send(f"{guild.name}")
+        
         for i in lettersa:
           message.content = message.content.replace(i, 'a')
           
@@ -146,9 +147,12 @@ class MyClient(discord.Client):
         for i in lettersy:
           message.content = message.content.replace(i, 'y')  
         for i in lettersz:
+          
           message.content = message.content.replace(i, 'z')
+        message.content = message.content.replace(' ', '')
+        message.content = message.content.replace('.', '')
         print(message.content)
-        print()
+        
         for words in badwords:
 
             

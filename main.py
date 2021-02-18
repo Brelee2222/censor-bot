@@ -149,7 +149,7 @@ class MyClient(discord.Client):
           message.content = message.content.replace(i, 'z')
         print(message.content)
         print()
-        for words in goodones:
+        for words in badwords:
 
             
             

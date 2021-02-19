@@ -27,7 +27,7 @@ lettersy = ('y', 'Y', '7')
 lettersz = ('z', 'Z', '2')
 
 
-badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'hoe', 'simp', 'penis', 'fock', 'bastard', 'ass', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'sex')
+badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'hoe', 'simp', 'penis', 'fock', 'bastard', 'ass', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex')
 
 goodones = ('class', 'bass', 'mass', 'pass')
 
@@ -149,7 +149,7 @@ class MyClient(discord.Client):
         for i in lettersz:
           
           message.content = message.content.replace(i, 'z')
-        message.content = message.content.replace(' ', '')
+        
         message.content = message.content.replace('.', '')
         print(message.content)
         

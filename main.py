@@ -17,9 +17,9 @@ letterso = ('o', 'O', '0', '*', '()')
 lettersp = ('p', 'P')
 lettersq = ('q', 'Q') 
 lettersr = ('r', 'R') 
-letterss = ('s', 'S', '5', '$', '&')
+letterss = ('s', 'S', '5', '$', '&', 'Ś')
 letterst = ('t', 'T', '+')
-lettersu = ('u', 'U')
+lettersu = ('u', 'U', 'ü', 'ū')
 lettersv = ('v', 'V') 
 lettersw = ('w', 'W') 
 lettersx = ('x', 'X') 
@@ -27,7 +27,7 @@ lettersy = ('y', 'Y', '7')
 lettersz = ('z', 'Z', '2')
 
 
-badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'hoe', 'simp', 'penis', 'fock', 'bastard', 'ass', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex')
+badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'simp', 'penis', 'fock', 'bastard', 'ass', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex', 'fcuk', 'puusy', 'pusy', 'poosy')
 
 goodones = ('class', 'bass', 'mass', 'pass')
 

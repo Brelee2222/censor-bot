@@ -169,4 +169,4 @@ class MyClient(discord.Client):
 keep_alive()  
 
 client = MyClient()
-client.run(os.getenv("TOKEN"))
+client.run(os.getenv("TOKEN"))  

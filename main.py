@@ -27,7 +27,7 @@ lettersy = ('y', 'Y', '7')
 lettersz = ('z', 'Z', '2')
 
 
-badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'simp', 'penis', 'fock', 'bastard', 'ass', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex', 'fcuk', 'puusy', 'pusy', 'poosy', 'cuunt')
+badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'simp', 'penis', 'fock', 'bastard', 'ass', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex', 'fcuk', 'puusy', 'pusy', 'poosy', 'cuunt', 'bicht')
 
 goodones = ('class', 'bass', 'mass', 'pass')
 
@@ -64,7 +64,16 @@ class MyClient(discord.Client):
         print('Username: {0.name}\nID: {0.id}'.format(self.user))
         
     async def on_message(self, message):
-        
+        if message.content == 'tell me about this bot':
+          
+          embed=discord.Embed(title="BOT NAME", description='censor bot', color=0x00ff00)
+          embed.add_field(name='creator', value="Brelee2222", inline=False)
+          embed.add_field(name='servers', value=len(client.guilds), inline=False)
+          
+          await message.channel.send(embed=embed)
+          return
+          
+
         
         if message.content == 'ping':
           msg = await message.channel.send("Timing My Ping System...")

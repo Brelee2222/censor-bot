@@ -1,4 +1,4 @@
-STATUS = ["Dm brelee2222 to invite me onto your server", "https://discord.gg/QzU45Tuvyz", "made by brelee2222", "go to brelee2222's server for bot updates"]
+STATUS = ["Dm brelee2222 to invite me onto your server", "https://discord.gg/QzU45Tuvyz", "made by brelee2222", "go to brelee2222's server for bot updates", 'discord.gg/QzU45Tuvyz']
 lettersa = ('a', 'A', '4', '@') 
 lettersb = ('b', 'B', '3', '8')
 lettersc = ('c', 'C', '(', '¢')
@@ -69,6 +69,7 @@ class MyClient(discord.Client):
           embed=discord.Embed(title="BOT NAME", description='censor bot', color=0x00ff00)
           embed.add_field(name='creator', value="Brelee2222", inline=False)
           embed.add_field(name='servers', value=len(client.guilds), inline=False)
+          embed.add_field(name='bot updates server', value=('https://discord.gg/QzU45Tuvyz'), inline=False)
           
           await message.channel.send(embed=embed)
           return
@@ -80,9 +81,10 @@ class MyClient(discord.Client):
           await asyncio.sleep(3)
           await msg.edit(content = f"My ping delay is **{round(client.latency * 1000)}ms**")
         print(message.content, ':author: ', message.author)
-        if message.content == 'servers':
+        if message.content == 'servers' and message.author.id == 479792413884547072:
           for guild in client.guilds:
             await message.author.send(f"{guild.name}")
+            await message.author.send(f"{guild.member_count}")
         
         for i in lettersa:
           message.content = message.content.replace(i, 'a')
@@ -168,7 +170,7 @@ class MyClient(discord.Client):
             
 
               if words in message.content: 
-                
+                  print('censored')
 
                   msg = message
                   await msg.delete()

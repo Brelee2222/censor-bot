@@ -27,7 +27,6 @@ lettersy = ('y', 'Y', '7')
 lettersz = ('z', 'Z', '2')
 guildids = [772905819448672256]
 pointers = [0]
-
 badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'simp', 'penis', 'fock', 'bastard', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex', 'fcuk', 'puusy', 'pusy', 'poosy', 'cuunt', 'bicht')
 
 

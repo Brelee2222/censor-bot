@@ -25,7 +25,8 @@ lettersw = ('w', 'W')
 lettersx = ('x', 'X') 
 lettersy = ('y', 'Y', '7')
 lettersz = ('z', 'Z', '2')
-
+guildids = [772905819448672256]
+pointers = [0]
 
 badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'simp', 'penis', 'fock', 'bastard', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex', 'fcuk', 'puusy', 'pusy', 'poosy', 'cuunt', 'bicht')
 
@@ -80,12 +81,44 @@ class MyClient(discord.Client):
           msg = await message.channel.send("Timing My Ping System...")
           await asyncio.sleep(3)
           await msg.edit(content = f"My ping delay is **{round(client.latency * 1000)}ms**")
-        print(message.content, ':author: ', message.author)
+        if not message.guild.id in guildids:
+          print(message.content, ':author: ', message.author)
         if message.content == 'servers' and message.author.id == 479792413884547072:
+          
+          try:
+            print(pointers)
+            await message.author.send(pointers)
+          except:
+            print('hello')
+          
+          embed=discord.Embed(title='servers', description='severs the bot is in', color=0x00ff00)
+
           for guild in client.guilds:
-            await message.author.send(f"{guild.name}")
-            await message.author.send(f"{guild.member_count}")
-        
+            
+            embed.add_field(name=f"{guild.name}", value=f"{guild.member_count}", inline=False)
+            try:
+              user = await client.fetch_user(f"{guild.owner_id}")
+              embed.add_field(name=user, value=f"{guild.owner_id}", inline=False)
+              embed.add_field(name='id:'
+              , value=f"{guild.id}", inline=False)
+
+              
+            
+          
+              
+              
+              
+              
+              
+              
+            except:
+              print('hello')
+          await message.author.send(embed=embed)
+            
+            
+            
+            
+                    
         for i in lettersa:
           message.content = message.content.replace(i, 'a')
           
@@ -162,21 +195,30 @@ class MyClient(discord.Client):
           message.content = message.content.replace(i, 'z')
         
         message.content = message.content.replace('.', '')
-        print(message.content)
+        if not message.guild.id in guildids:
+          print(message.content)
+
         
         for words in badwords:
 
             
             
 
-              if words in message.content: 
+              if words in message.content and message.author.id != 806619458184806450: 
                   print('censored')
-
-                  msg = message
-                  await msg.delete()
-                  fmt = 'the message of {0.author} has been deleted due to inappropriate use of content'
-                  await message.channel.send(fmt.format(message), delete_after=6.0)
-                  await message.channel.send('https://cdn.discordapp.com/emojis/806577679829958737.png?v=1')
+                  
+                  pointers[0] +=1
+                  pointers.append(message.author.name + '#' + message.author.discriminator)
+                  pointers.append(message.content)
+                  try:
+                    msg = message
+                    await msg.delete()
+                    fmt = 'the message of {0.author} has been deleted due to inappropriate use of content'
+                    await message.channel.send(fmt.format(message), delete_after=6.0)
+                    await message.channel.send('https://cdn.discordapp.com/emojis/806577679829958737.png?v=1')
+                    pointers.append('+')
+                  except:
+                    pointers.append('-')
 keep_alive()  
 
 client = MyClient()

@@ -1,13 +1,13 @@
 STATUS = ["Dm brelee2222 to invite me onto your server", "https://discord.gg/QzU45Tuvyz", "made by brelee2222", "go to brelee2222's server for bot updates", 'discord.gg/QzU45Tuvyz']
-lettersa = ('a', 'A', '4', '@') 
+lettersa = ('a', 'A', '4', '@', '𝕒') 
 lettersb = ('b', 'B', '3', '8')
 lettersc = ('c', 'C', '(', '¢')
-lettersd = ('d', 'D')
-letterse = ('e', 'E') 
+lettersd = ('d', 'D', '𝕕')
+letterse = ('e', 'E', '𝕖') 
 lettersf = ('f', 'F') 
 lettersg = ('g', 'G', '9') 
 lettersh = ('h', 'H')
-lettersi = ('i', 'I', '1', '|', '!')
+lettersi = ('i', 'I', '1', '|', '!', '𝕚')
 lettersj = ('j', 'J')
 lettersk = ('k', 'K')
 lettersl = ('l', 'L', '/')
@@ -17,7 +17,7 @@ letterso = ('o', 'O', '0', '*', '()')
 lettersp = ('p', 'P')
 lettersq = ('q', 'Q') 
 lettersr = ('r', 'R') 
-letterss = ('s', 'S', '5', '$', '&', 'Ś')
+letterss = ('s', 'S', '5', '$', '&', 'Ś', '𝕊')
 letterst = ('t', 'T', '+')
 lettersu = ('u', 'U', 'ü', 'ū')
 lettersv = ('v', 'V') 
@@ -26,7 +26,9 @@ lettersx = ('x', 'X')
 lettersy = ('y', 'Y', '7')
 lettersz = ('z', 'Z', '2')
 guildids = [772905819448672256]
+
 pointers = [0]
+
 badwords = ('fuck', 'shit','bitch','thot','niger', 'dick', 'faggot', 'cum', 'cunt', 'simp', 'penis', 'fock', 'bastard', 'shiet', 'fuhck', 'cock', 'balls', 'ballz', 'peniz', 'peenis', 'peeniz', 'pussy', 'pussee', 'crap', 'kunt', 'cunt', 'sex', 'fcuk', 'puusy', 'pusy', 'poosy', 'cuunt', 'bicht')
 
 
@@ -80,26 +82,43 @@ class MyClient(discord.Client):
           msg = await message.channel.send("Timing My Ping System...")
           await asyncio.sleep(3)
           await msg.edit(content = f"My ping delay is **{round(client.latency * 1000)}ms**")
-        if not message.guild.id in guildids:
+        try:
+          if not message.guild.id in guildids:
+            print(message.content, ':author: ', message.author)
+        except:
           print(message.content, ':author: ', message.author)
         if message.content == 'servers' and message.author.id == 479792413884547072:
           
           try:
+            global pointers
             print(pointers)
+            
             await message.author.send(pointers)
+            
           except:
+            
+            points = pointers[0]
+            
+            pointers = [points]
             print('hello')
           
-          embed=discord.Embed(title='servers', description='severs the bot is in', color=0x00ff00)
+          
 
           for guild in client.guilds:
+            embed=discord.Embed(title='servers', description=len(client.guilds), color=0x00ff00)
             
-            embed.add_field(name=f"{guild.name}", value=f"{guild.member_count}", inline=False)
             try:
+              embed.add_field(name=f"{guild.name}", value=f"{guild.member_count}", inline=False)
               user = await client.fetch_user(f"{guild.owner_id}")
               embed.add_field(name=user, value=f"{guild.owner_id}", inline=False)
               embed.add_field(name='id:'
               , value=f"{guild.id}", inline=False)
+              embed.add_field(name='joined:'
+              , value=f"{guild.me.joined_at}", inline=False)
+              await message.author.send(embed=embed)
+
+              
+            
 
               
             
@@ -112,7 +131,7 @@ class MyClient(discord.Client):
               
             except:
               print('hello')
-          await message.author.send(embed=embed)
+          
             
             
             
@@ -194,9 +213,11 @@ class MyClient(discord.Client):
           message.content = message.content.replace(i, 'z')
         
         message.content = message.content.replace('.', '')
-        if not message.guild.id in guildids:
+        try:
+          if not message.guild.id in guildids:
+            print(message.content)
+        except:
           print(message.content)
-
         
         for words in badwords:
 
@@ -207,14 +228,18 @@ class MyClient(discord.Client):
                   print('censored')
                   
                   pointers[0] +=1
+                  
                   pointers.append(message.author.name + '#' + message.author.discriminator)
+                  pointers.append(message.author.id)
                   pointers.append(message.content)
+                  pointers.append(message.guild)
+                
                   try:
                     msg = message
                     await msg.delete()
                     fmt = 'the message of {0.author} has been deleted due to inappropriate use of content'
                     await message.channel.send(fmt.format(message), delete_after=6.0)
-                    await message.channel.send('https://cdn.discordapp.com/emojis/806577679829958737.png?v=1')
+                    
                     pointers.append('+')
                   except:
                     pointers.append('-')

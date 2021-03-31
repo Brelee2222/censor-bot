@@ -45,7 +45,6 @@ import asyncio
 from keep_alive import keep_alive
 import discord
 import os
-import rich_prescence
 import time
 import discord.ext
 from discord.utils import get

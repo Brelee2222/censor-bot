@@ -224,7 +224,7 @@ class MyClient(discord.Client):
             
             
 
-              if words in message.content and message.author.id != 806619458184806450: 
+              if (message.content.endswith(words) or (words + ' ') in message.content) and message.author.id != 806619458184806450: 
                   print('censored')
                   
                   pointers[0] +=1

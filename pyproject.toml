@@ -17,6 +17,7 @@ ping3 = "^2.6.6"
 utils = "^1.0.1"
 conv = "^0.2"
 django-encrypt = "^0.1"
+dhooks = "^1.1.4"
 
 [tool.poetry.dev-dependencies]
 

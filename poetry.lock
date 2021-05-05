@@ -100,6 +100,23 @@ version = "0.2"
 
 [[package]]
 category = "main"
+description = "An (a)sync wrapper for discord webhooks"
+name = "dhooks"
+optional = false
+python-versions = ">=3.5.3"
+version = "1.1.4"
+
+[package.dependencies]
+aiohttp = "*"
+requests = "*"
+
+[package.extras]
+docs = ["sphinx", "sphinx-rtd-theme"]
+examples = ["sanic"]
+tests = ["flake8", "python-dotenv", "tox-travis"]
+
+[[package]]
+category = "main"
 description = "A mirror package for discord.py. Please install that instead."
 name = "discord"
 optional = false
@@ -245,6 +262,18 @@ test = ["ipaddress", "mock", "unittest2", "enum34", "pywin32", "wmi"]
 
 [[package]]
 category = "main"
+description = "Python HTTP for Humans."
+name = "requests"
+optional = false
+python-versions = "*"
+version = "2.15.1"
+
+[package.extras]
+security = ["cryptography (>=1.3.4)", "idna (>=2.0.0)", "pyOpenSSL (>=0.14)"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
+
+[[package]]
+category = "main"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -292,7 +321,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "ffffcb58ccff4901cacc8a1393c36f23f8f1075071c590faf036805d6018b745"
+content-hash = "16e3f59fc4eb0a71a06d4dafd309ae223f322b2a00b7ef99251671a715d52ccd"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -363,6 +392,9 @@ colour = [
 ]
 conv = [
     {file = "conv-0.2.tar.gz", hash = "sha256:0a67cbf4a72a6bc2947e731e5305d887142666ec6cf71694522bc0a2534e7980"},
+]
+dhooks = [
+    {file = "dhooks-1.1.4.tar.gz", hash = "sha256:5e3f599c06e09a7e185a1368d8ce665ad7682e689f01e510682b379d2f8a9d2b"},
 ]
 discord = [
     {file = "discord-1.0.1-py3-none-any.whl", hash = "sha256:9d4debb4a37845543bd4b92cb195bc53a302797333e768e70344222857ff1559"},
@@ -527,6 +559,10 @@ psutil = [
     {file = "psutil-5.8.0-cp39-cp39-win32.whl", hash = "sha256:ea372bcc129394485824ae3e3ddabe67dc0b118d262c568b4d2602a7070afdb0"},
     {file = "psutil-5.8.0-cp39-cp39-win_amd64.whl", hash = "sha256:f4634b033faf0d968bb9220dd1c793b897ab7f1189956e1aa9eae752527127d3"},
     {file = "psutil-5.8.0.tar.gz", hash = "sha256:0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6"},
+]
+requests = [
+    {file = "requests-2.15.1-py2.py3-none-any.whl", hash = "sha256:ff753b2196cd18b1bbeddc9dcd5c864056599f7a7d9a4fb5677e723efa2b7fb9"},
+    {file = "requests-2.15.1.tar.gz", hash = "sha256:e5659b9315a0610505e050bb7190bf6fa2ccee1ac295f2b760ef9d8a03ebbb2e"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},

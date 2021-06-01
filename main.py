@@ -16,7 +16,7 @@ hook = Webhook(os.getenv('WEBHOOKTOKEN'))
 with open('uptime.txt', 'r') as file:
   uptime = file.read().split(', ')
 hook.send(('Censor bot has been down for at most ' + uptime[len(uptime) - 1] + ' seconds')) 
-from encrypt import decrint, encrint
+from encrypt import decrint, encrint 
 with open('conv.py', 'w') as f:
   with open('totaly just numbers.txt', 'r') as g:
     f.write(f"""{encrint(g.read())}""")
